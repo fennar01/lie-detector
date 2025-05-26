@@ -9,7 +9,7 @@ A real-time lie detector that analyzes facial video data to estimate the probabi
 - **Blood Perfusion Analysis (In Progress)**: Estimates blood flow changes in the face (e.g., blushing, pallor) using color analysis and subtle skin tone variations.
 - **Microexpression Detection (In Progress)**: Detects rapid, involuntary facial movements that may indicate concealed emotions using deep learning and facial landmark tracking.
 - **Nervousness & Behavioral Cue Analysis (In Progress)**: Detects subtle nervous tics, fidgeting, gaze aversion, and other behavioral cues that may indicate stress or deception.
-- **Lie Probability Score**: Continuously updates the probability that the subject is lying. *(Coming soon)*
+- **Live Probability Scoring & Alert System (In Progress)**: Continuously updates and displays the probability that the subject is lying, and alerts the user when a threshold is exceeded.
 - **User Alerts**: Notifies the user when the probability of lying exceeds a threshold. *(Coming soon)*
 
 ## Sentiment Analysis (In Progress)
@@ -22,7 +22,10 @@ The app estimates blood perfusion (blood flow) in the subject's face by analyzin
 The app detects microexpressions—brief, involuntary facial movements that can reveal concealed emotions. This uses facial landmark tracking (e.g., with Mediapipe or dlib) and deep learning models trained to recognize rapid changes in facial muscle movement. Microexpression detection is a key component for advanced lie detection and emotional analysis.
 
 ## Nervousness & Behavioral Cue Analysis (In Progress)
-The next feature will analyze nervousness and behavioral cues such as gaze aversion, fidgeting, blinking rate, and other subtle movements. This will use facial landmark tracking, pose estimation, and temporal analysis to identify patterns associated with stress or deception.
+The app analyzes nervousness and behavioral cues such as gaze aversion, fidgeting, blinking rate, and other subtle movements. This uses facial landmark tracking, pose estimation, and temporal analysis to identify patterns associated with stress or deception.
+
+## Live Probability Scoring & Alert System (In Progress)
+The next feature will combine outputs from facial expression, blood perfusion, microexpression, and behavioral cue modules to compute a real-time probability that the subject is lying. This probability will be displayed live in the app, and the user will be alerted if it exceeds a configurable threshold. The scoring system will use a weighted combination of model outputs and heuristics, and can be further improved with machine learning.
 
 ## Tech Stack
 - Python (OpenCV, dlib, scikit-learn, deep learning frameworks)
@@ -46,8 +49,8 @@ The next feature will analyze nervousness and behavioral cues such as gaze avers
 
 ## Usage
 - Launch the app and provide access to your webcam.
-- The system will display a live video feed with real-time face detection, sentiment analysis, blood perfusion analysis, and (soon) microexpression and behavioral cue analysis.
-- Additional features (lie probability, alerts, etc.) will be added soon.
+- The system will display a live video feed with real-time face detection, sentiment analysis, blood perfusion analysis, and (soon) microexpression, behavioral cue, and probability scoring.
+- Additional features (alerts, etc.) will be added soon.
 
 ## Contributing
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
@@ -59,7 +62,7 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 - [~] Blood perfusion analysis module (in progress)
 - [~] Microexpression detection (in progress)
 - [~] Nervousness and behavioral cue analysis (in progress)
-- [ ] Live probability scoring and alert system
+- [~] Live probability scoring and alert system (in progress)
 - [ ] Web-based user interface
 - [ ] Model training and dataset curation
 - [ ] Extensive testing and validation
