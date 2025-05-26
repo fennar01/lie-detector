@@ -19,7 +19,7 @@ A real-time lie detector that analyzes facial video data to estimate the probabi
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_GITHUB_USERNAME/lie-detector.git
+   git clone https://github.com/fennar01/lie-detector.git
    cd lie-detector
    ```
 2. Install dependencies:
