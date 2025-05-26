@@ -4,9 +4,9 @@ A real-time lie detector that analyzes facial video data to estimate the probabi
 
 ## Features
 - **Live Video Analysis**: Processes facial video input in real time.
+- **Real-Time Facial Detection and Tracking**: Detects and tracks faces in the webcam feed using Mediapipe.
 - **Lie Probability Score**: Continuously updates the probability that the subject is lying.
 - **Sentiment Analysis**: Analyzes emotional state from facial expressions and speech (if available).
-- **Facial Recognition**: Identifies and tracks the subject's face.
 - **Blood Perfusion Detection**: Estimates blood flow changes in the face (e.g., blushing, pallor) using color analysis.
 - **Nervousness & Microexpressions**: Detects subtle facial movements and nervous tics.
 - **User Alerts**: Notifies the user when the probability of lying exceeds a threshold.
@@ -33,15 +33,15 @@ A real-time lie detector that analyzes facial video data to estimate the probabi
 
 ## Usage
 - Launch the app and provide access to your webcam.
-- The system will display a live video feed with a real-time probability score.
-- Alerts will be shown if the subject is likely lying.
+- The system will display a live video feed with real-time face detection.
+- Additional features (lie probability, alerts, etc.) will be added soon.
 
 ## Contributing
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Roadmap
 - [x] Project scaffolding and documentation
-- [ ] Real-time facial detection and tracking
+- [x] Real-time facial detection and tracking
 - [ ] Sentiment analysis integration
 - [ ] Blood perfusion analysis module
 - [ ] Microexpression detection (deep learning)
