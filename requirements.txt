@@ -1,0 +1,15 @@
+opencv-python
+numpy
+dlib
+scikit-learn
+imutils
+streamlit
+face_recognition
+matplotlib
+scipy
+requests
+Pillow
+mediapipe
+transformers
+torch
+tensorflow 
