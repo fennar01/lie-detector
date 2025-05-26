@@ -28,16 +28,16 @@ This app analyzes facial video data and displays a live probability that the sub
 **Current Features:**
 - Real-time facial detection and tracking
 - Facial expression sentiment analysis (demo)
+- Blood perfusion analysis (demo)
 
 **Features coming soon:**
-- Blood perfusion analysis
 - Microexpression detection
 - Nervousness analysis
 
 ---
 """)
 
-st.header("Live Video Input: Face Detection & Sentiment Analysis Demo")
+st.header("Live Video Input: Face Detection, Sentiment & Blood Perfusion Analysis Demo")
 
 # Initialize Mediapipe face detection
 mp_face_detection = mp.solutions.face_detection
@@ -71,18 +71,23 @@ if run:
                     w = int(bboxC.width * iw)
                     h = int(bboxC.height * ih)
                     x2, y2 = x1 + w, y1 + h
-                    # Crop face for emotion analysis
+                    # Crop face for emotion and perfusion analysis
                     face_img = image[max(0, y1):min(ih, y2), max(0, x1):min(iw, x2)]
+                    label = ""
                     if face_img.size > 0:
-                        # Resize/cast for model input if needed
+                        # Sentiment analysis
                         face_pil = Image.fromarray(face_img).resize((48, 48)).convert('L')
                         face_np = np.array(face_pil)
-                        # Predict emotion (replace with real model call)
                         emotion, confidence = emotion_model.predict(face_np)
-                        # Draw label
-                        label = f"{emotion} ({confidence*100:.0f}%)"
+                        label += f"{emotion} ({confidence*100:.0f}%) "
+                        # Blood perfusion analysis (mean hue value)
+                        face_bgr = cv2.cvtColor(face_img, cv2.COLOR_RGB2BGR)
+                        face_hsv = cv2.cvtColor(face_bgr, cv2.COLOR_BGR2HSV)
+                        mean_hue = np.mean(face_hsv[:,:,0])
+                        label += f"Perfusion: {mean_hue:.1f}"
+                        # Draw bounding box and label
                         cv2.rectangle(annotated_image, (x1, y1), (x2, y2), (0,255,0), 2)
-                        cv2.putText(annotated_image, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,0), 2)
+                        cv2.putText(annotated_image, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,255,0), 2)
                     mp_drawing.draw_detection(annotated_image, detection)
             FRAME_WINDOW.image(annotated_image)
             # Streamlit workaround for breaking loop
@@ -90,7 +95,7 @@ if run:
                 break
     cap.release()
 else:
-    st.info("Click 'Start Webcam' to begin face detection and sentiment analysis.")
+    st.info("Click 'Start Webcam' to begin face detection, sentiment, and blood perfusion analysis.")
 
 st.header("Lie Probability")
 st.metric(label="Probability of Lying", value="-- %") 
