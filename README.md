@@ -7,15 +7,19 @@ A real-time lie detector that analyzes facial video data to estimate the probabi
 - **Real-Time Facial Detection and Tracking**: Detects and tracks faces in the webcam feed using Mediapipe.
 - **Sentiment Analysis (In Progress)**: Analyzes emotional state from facial expressions using deep learning models and, optionally, from speech using NLP models.
 - **Blood Perfusion Analysis (In Progress)**: Estimates blood flow changes in the face (e.g., blushing, pallor) using color analysis and subtle skin tone variations.
+- **Microexpression Detection (In Progress)**: Detects rapid, involuntary facial movements that may indicate concealed emotions using deep learning and facial landmark tracking.
 - **Lie Probability Score**: Continuously updates the probability that the subject is lying. *(Coming soon)*
-- **Nervousness & Microexpressions**: Detects subtle facial movements and nervous tics. *(Coming soon)*
+- **Nervousness & Behavioral Cues**: Detects subtle nervous tics and behavioral cues. *(Coming soon)*
 - **User Alerts**: Notifies the user when the probability of lying exceeds a threshold. *(Coming soon)*
 
 ## Sentiment Analysis (In Progress)
 The app analyzes the subject's emotional state in real time using facial expression recognition. This leverages pre-trained deep learning models (e.g., from the `transformers` library or custom CNNs) to classify emotions such as happiness, sadness, anger, surprise, and fear. Optionally, audio sentiment analysis may be added in the future.
 
 ## Blood Perfusion Analysis (In Progress)
-The next feature will estimate blood perfusion (blood flow) in the subject's face by analyzing subtle changes in skin color and tone over time. This can be achieved using color space transformations (e.g., RGB to HSV), region-of-interest tracking, and signal processing to detect physiological changes such as blushing or pallor, which may correlate with stress or deception.
+The app estimates blood perfusion (blood flow) in the subject's face by analyzing subtle changes in skin color and tone over time. This can be achieved using color space transformations (e.g., RGB to HSV), region-of-interest tracking, and signal processing to detect physiological changes such as blushing or pallor, which may correlate with stress or deception.
+
+## Microexpression Detection (In Progress)
+The next feature will detect microexpressions—brief, involuntary facial movements that can reveal concealed emotions. This will use facial landmark tracking (e.g., with Mediapipe or dlib) and deep learning models trained to recognize rapid changes in facial muscle movement. Microexpression detection is a key component for advanced lie detection and emotional analysis.
 
 ## Tech Stack
 - Python (OpenCV, dlib, scikit-learn, deep learning frameworks)
@@ -39,8 +43,8 @@ The next feature will estimate blood perfusion (blood flow) in the subject's fac
 
 ## Usage
 - Launch the app and provide access to your webcam.
-- The system will display a live video feed with real-time face detection and sentiment analysis.
-- Additional features (blood perfusion, lie probability, alerts, etc.) will be added soon.
+- The system will display a live video feed with real-time face detection, sentiment analysis, and blood perfusion analysis.
+- Additional features (microexpression detection, lie probability, alerts, etc.) will be added soon.
 
 ## Contributing
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
@@ -50,7 +54,7 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 - [x] Real-time facial detection and tracking
 - [~] Sentiment analysis integration (in progress)
 - [~] Blood perfusion analysis module (in progress)
-- [ ] Microexpression detection (deep learning)
+- [~] Microexpression detection (in progress)
 - [ ] Nervousness and behavioral cue analysis
 - [ ] Live probability scoring and alert system
 - [ ] Web-based user interface
